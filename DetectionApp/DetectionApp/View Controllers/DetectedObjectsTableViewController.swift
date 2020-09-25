@@ -9,7 +9,7 @@ import UIKit
 
 class DetectedObjectsTableViewController: UITableViewController {
     
-    let detectedObjectController = DetectedObjectController()
+    var detectedObjectController: DetectedObjectController!
     var detectedObject: DetectedObject?
 //    var detectedObjects: [DetectedObject]?
 

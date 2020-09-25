@@ -10,6 +10,7 @@ import Foundation
 class DetectedObjectController {
     
     private(set) var detectedObjects: [DetectedObject] = []
+//    var detectedObject: DetectedObject?
     
     
     // Create a DetectedObject

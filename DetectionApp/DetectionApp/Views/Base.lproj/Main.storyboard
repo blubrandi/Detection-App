@@ -41,7 +41,7 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="View Detected Objects"/>
                                                 <connections>
-                                                    <segue destination="agi-xg-Prk" kind="popoverPresentation" popoverAnchorView="JWO-IX-ble" id="tDP-t6-5si">
+                                                    <segue destination="agi-xg-Prk" kind="popoverPresentation" identifier="ToHistoryTVC" popoverAnchorView="JWO-IX-ble" id="tDP-t6-5si">
                                                         <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                                     </segue>
                                                 </connections>

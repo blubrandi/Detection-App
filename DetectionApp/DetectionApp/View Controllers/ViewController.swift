@@ -116,5 +116,13 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
 //        print(detectedObjectController.detectedObjects.count)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ToHistoryTVC" {
+            let destinationVC = segue.destination as! DetectedObjectsTableViewController
+            
+            destinationVC.detectedObjectController = self.detectedObjectController
+        }
+    }
+    
 }
 
