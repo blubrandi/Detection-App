@@ -8,6 +8,11 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    
+    @IBOutlet weak var cameraView: CameraPreviewView!
+    @IBOutlet weak var resultLabel: UILabel!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()

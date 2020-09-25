@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GwM-To-8Be">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GwM-To-8Be" customClass="CameraPreviewView" customModule="DetectionApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Czh-x5-zTJ">
@@ -55,6 +55,10 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GwM-To-8Be" secondAttribute="trailing" id="pA1-wW-yxf"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cameraView" destination="GwM-To-8Be" id="LpP-nU-efV"/>
+                        <outlet property="resultLabel" destination="n9Y-Iu-23H" id="T4B-O6-KBW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

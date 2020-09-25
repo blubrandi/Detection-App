@@ -13,6 +13,7 @@
 		858A2B90251E5A0800AF589B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 858A2B8E251E5A0800AF589B /* Main.storyboard */; };
 		858A2B92251E5A0900AF589B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 858A2B91251E5A0900AF589B /* Assets.xcassets */; };
 		858A2B95251E5A0900AF589B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 858A2B93251E5A0900AF589B /* LaunchScreen.storyboard */; };
+		858A2B9E251E5CEF00AF589B /* CameraPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858A2B9D251E5CEF00AF589B /* CameraPreviewView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		858A2B91251E5A0900AF589B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		858A2B94251E5A0900AF589B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		858A2B96251E5A0900AF589B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		858A2B9D251E5CEF00AF589B /* CameraPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreviewView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				858A2B88251E5A0800AF589B /* AppDelegate.swift */,
 				858A2B8A251E5A0800AF589B /* SceneDelegate.swift */,
 				858A2B8C251E5A0800AF589B /* ViewController.swift */,
+				858A2B9D251E5CEF00AF589B /* CameraPreviewView.swift */,
 				858A2B8E251E5A0800AF589B /* Main.storyboard */,
 				858A2B91251E5A0900AF589B /* Assets.xcassets */,
 				858A2B93251E5A0900AF589B /* LaunchScreen.storyboard */,
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				858A2B9E251E5CEF00AF589B /* CameraPreviewView.swift in Sources */,
 				858A2B8D251E5A0800AF589B /* ViewController.swift in Sources */,
 				858A2B89251E5A0800AF589B /* AppDelegate.swift in Sources */,
 				858A2B8B251E5A0800AF589B /* SceneDelegate.swift in Sources */,
