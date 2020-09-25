@@ -19,13 +19,14 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     let cameraOutput = AVCaptureVideoDataOutput()
     
     // Define the model to be used
-//    let model = try? VNCoreMLModel(for: MobileNetV2().model)
-    let model = try? VNCoreMLModel(for: Resnet50().model)
+    let model = try? VNCoreMLModel(for: MobileNetV2().model)
+//    let model = try? VNCoreMLModel(for: Resnet50().model)
     
     let detectedObjectController = DetectedObjectController()
     
     @IBOutlet weak var cameraView: CameraPreviewView!
     @IBOutlet weak var resultLabel: UILabel!
+    @IBOutlet weak var resultsView: UIView!
     
 
     override func viewDidLoad() {
@@ -33,6 +34,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         
         // Call configure session, which creates a new session when the view loads
         configureSession()
+        configureResultsView()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -98,6 +100,11 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         guard let pixelBuffer: CVPixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
         try? VNImageRequestHandler(cvPixelBuffer: pixelBuffer, options: [:]).perform([request])
         
+    }
+    
+    func configureResultsView() {
+        resultsView.backgroundColor = UIColor(white: 0, alpha: 0.7)
+        resultsView.layer.cornerRadius = 10
     }
     
     @IBAction func saveObjectTapped(_ sender: Any) {

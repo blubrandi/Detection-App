@@ -76,6 +76,7 @@
                     <connections>
                         <outlet property="cameraView" destination="GwM-To-8Be" id="LpP-nU-efV"/>
                         <outlet property="resultLabel" destination="n9Y-Iu-23H" id="T4B-O6-KBW"/>
+                        <outlet property="resultsView" destination="Czh-x5-zTJ" id="gKK-mt-P1A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
