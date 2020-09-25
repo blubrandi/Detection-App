@@ -32,7 +32,7 @@ class DetectedObjectController {
     }
     
     // Load the DetectObjects file
-    private func loadFromPersistence() {
+    func loadFromPersistence() {
         let fm = FileManager.default
         
         do {

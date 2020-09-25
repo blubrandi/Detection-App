@@ -102,6 +102,8 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         guard let detectedObjectName = resultLabel.text else { return }
         
         detectedObjectController.createDetectedObject(withName: detectedObjectName)
+        print("Save Tapped")
+        print(detectedObjectController.detectedObjects.count)
     }
     
 }
