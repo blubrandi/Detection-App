@@ -42,6 +42,7 @@ class DetectedObjectController {
                 let decoder = PropertyListDecoder()
             
             detectedObjects = try decoder.decode([DetectedObject].self, from: data)
+            print("Count from persisitence load: ", detectedObjects.count)
         } catch {
             print("Could not load detectedObjects from persistence")
         }

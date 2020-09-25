@@ -18,6 +18,7 @@
 		858A2BA4251E6E1B00AF589B /* DetectedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858A2BA3251E6E1B00AF589B /* DetectedObject.swift */; };
 		858A2BA7251E6F9100AF589B /* DetectedObjectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858A2BA6251E6F9100AF589B /* DetectedObjectController.swift */; };
 		858A2BAA251E75B600AF589B /* DetectedObjectsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858A2BA9251E75B600AF589B /* DetectedObjectsTableViewController.swift */; };
+		858A2BB6251E8A4D00AF589B /* Resnet50.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 858A2BB5251E8A4D00AF589B /* Resnet50.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		858A2BA3251E6E1B00AF589B /* DetectedObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectedObject.swift; sourceTree = "<group>"; };
 		858A2BA6251E6F9100AF589B /* DetectedObjectController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectedObjectController.swift; sourceTree = "<group>"; };
 		858A2BA9251E75B600AF589B /* DetectedObjectsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectedObjectsTableViewController.swift; sourceTree = "<group>"; };
+		858A2BB5251E8A4D00AF589B /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Resnet50.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +74,6 @@
 				858A2BB2251E80B600AF589B /* Model Controllers */,
 				858A2BAE251E809200AF589B /* Views */,
 				858A2BAC251E808200AF589B /* View Controllers */,
-				858A2BA0251E64A100AF589B /* MobileNetV2.mlmodel */,
 				858A2B91251E5A0900AF589B /* Assets.xcassets */,
 				858A2B96251E5A0900AF589B /* Info.plist */,
 			);
@@ -100,6 +101,8 @@
 		858A2BAF251E80A000AF589B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				858A2BA0251E64A100AF589B /* MobileNetV2.mlmodel */,
+				858A2BB5251E8A4D00AF589B /* Resnet50.mlmodel */,
 				858A2BA3251E6E1B00AF589B /* DetectedObject.swift */,
 				858A2B9D251E5CEF00AF589B /* CameraPreviewView.swift */,
 			);
@@ -185,6 +188,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				858A2BA7251E6F9100AF589B /* DetectedObjectController.swift in Sources */,
+				858A2BB6251E8A4D00AF589B /* Resnet50.mlmodel in Sources */,
 				858A2B9E251E5CEF00AF589B /* CameraPreviewView.swift in Sources */,
 				858A2B8D251E5A0800AF589B /* ViewController.swift in Sources */,
 				858A2B89251E5A0800AF589B /* AppDelegate.swift in Sources */,

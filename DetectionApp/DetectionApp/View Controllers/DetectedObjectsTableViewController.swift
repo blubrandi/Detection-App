@@ -11,6 +11,7 @@ class DetectedObjectsTableViewController: UITableViewController {
     
     let detectedObjectController = DetectedObjectController()
     var detectedObject: DetectedObject?
+//    var detectedObjects: [DetectedObject]?
 
     override func viewDidLoad() {
         super.viewDidLoad()

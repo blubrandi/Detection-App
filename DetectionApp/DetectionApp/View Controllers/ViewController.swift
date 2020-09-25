@@ -8,6 +8,7 @@
 import UIKit
 import AVFoundation
 import Vision
+import CoreML
 
 class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
     
@@ -18,7 +19,8 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     let cameraOutput = AVCaptureVideoDataOutput()
     
     // Define the model to be used
-    let model = try? VNCoreMLModel(for: MobileNetV2().model)
+//    let model = try? VNCoreMLModel(for: MobileNetV2().model)
+    let model = try? VNCoreMLModel(for: Resnet50().model)
     
     let detectedObjectController = DetectedObjectController()
     
@@ -43,6 +45,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         
         // Create a new capture device from camera
         guard let camera = AVCaptureDevice.default(for: .video) else { return }
+        cameraView.videoPreviewLayer.videoGravity = .resizeAspectFill
         
         // Use camera to capture input
         guard let cameraInput = try? AVCaptureDeviceInput(device: camera) else { return }
