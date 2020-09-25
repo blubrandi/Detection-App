@@ -20,6 +20,8 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     // Define the model to be used
     let model = try? VNCoreMLModel(for: MobileNetV2().model)
     
+    let detectedObjectController = DetectedObjectController()
+    
     @IBOutlet weak var cameraView: CameraPreviewView!
     @IBOutlet weak var resultLabel: UILabel!
     
@@ -68,6 +70,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         // Begin running captureSession
         captureSession.startRunning()
     }
+    
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         
         let request = VNCoreMLRequest(model: model!, completionHandler: { [self] (completedRequest, error) in
@@ -87,7 +90,6 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
                 resultLabel.text = requestResult.identifier
             }
             
-            
         })
         
         guard let pixelBuffer: CVPixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
@@ -95,6 +97,12 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         
     }
     
-
+    @IBAction func saveObjectTapped(_ sender: Any) {
+        
+        guard let detectedObjectName = resultLabel.text else { return }
+        
+        detectedObjectController.createDetectedObject(withName: detectedObjectName)
+    }
+    
 }
 
