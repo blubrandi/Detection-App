@@ -103,7 +103,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         
         detectedObjectController.createDetectedObject(withName: detectedObjectName)
         print("Save Tapped")
-        print(detectedObjectController.detectedObjects.count)
+//        print(detectedObjectController.detectedObjects.count)
     }
     
 }

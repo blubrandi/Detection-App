@@ -41,7 +41,9 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="View Detected Objects"/>
                                                 <connections>
-                                                    <segue destination="agi-xg-Prk" kind="presentation" id="tDP-t6-5si"/>
+                                                    <segue destination="agi-xg-Prk" kind="popoverPresentation" popoverAnchorView="JWO-IX-ble" id="tDP-t6-5si">
+                                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                                    </segue>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -112,6 +114,7 @@
                             <outlet property="delegate" destination="agi-xg-Prk" id="Nbw-JE-HVI"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="hqr-8g-xFJ"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IhI-kB-waV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
