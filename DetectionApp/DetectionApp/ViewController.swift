@@ -7,6 +7,7 @@
 
 import UIKit
 import AVFoundation
+import Vision
 
 class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
     
@@ -15,6 +16,9 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     
     // Instantiate output from camera data to add to captureSession
     let cameraOutput = AVCaptureVideoDataOutput()
+    
+    // Define the model to be used
+    let model = try? VNCoreMLModel(for: MobileNetV2().model)
     
     @IBOutlet weak var cameraView: CameraPreviewView!
     @IBOutlet weak var resultLabel: UILabel!
@@ -53,6 +57,8 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
             fatalError("Cannot add cameraOutput to session.")
         }
         
+        captureSession.addOutput(cameraOutput)
+        
         // Sends cameraOutput buffer to a background queue
         cameraOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "captureQueue"))
         
@@ -62,7 +68,33 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         // Begin running captureSession
         captureSession.startRunning()
     }
-
+    func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+        
+        let request = VNCoreMLRequest(model: model!, completionHandler: { [self] (completedRequest, error) in
+        
+            if let error = error {
+                fatalError("Could not complete request")
+            }
+            
+            // Define the results of the VNCoreMLRequest as an array of VNClassificationObservations
+            guard let requestResults = completedRequest.results as? [VNClassificationObservation] else { return }
+            
+            // Define the first result in the requestedResults Array
+            guard let requestResult = requestResults.first else { return }
+            
+            // Send the result identifer to the main queue to update the resultLabel with the requestResult
+            DispatchQueue.main.async {
+                resultLabel.text = requestResult.identifier
+            }
+            
+            
+        })
+        
+        guard let pixelBuffer: CVPixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
+        try? VNImageRequestHandler(cvPixelBuffer: pixelBuffer, options: [:]).perform([request])
+        
+    }
+    
 
 }
 
