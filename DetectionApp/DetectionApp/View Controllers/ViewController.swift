@@ -112,8 +112,23 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         guard let detectedObjectName = resultLabel.text else { return }
         
         detectedObjectController.createDetectedObject(withName: detectedObjectName)
-        print("Save Tapped")
+//        print("Save Tapped")
 //        print(detectedObjectController.detectedObjects.count)
+        
+        let alertController = UIAlertController(title: "Object Saved!", message: "Please select an option below to continue.", preferredStyle: .alert)
+        
+        let viewSavedAction = UIAlertAction(title: "View Saved", style: .default) { (viewSavedAction) in
+            self.performSegue(withIdentifier: "ToHistoryTVC", sender: self)
+        }
+        
+        let dismissAction = UIAlertAction(title: "Continue", style: .default) { (dismissAction) in
+            self.dismiss(animated: true, completion: nil)
+        }
+        
+        alertController.addAction(viewSavedAction)
+        alertController.addAction(dismissAction)
+        
+        self.present(alertController, animated: true, completion: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
