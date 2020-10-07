@@ -35,6 +35,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         // Call configure session, which creates a new session when the view loads
         configureSession()
         configureResultsView()
+        detectedObjectController.loadFromPersistence()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -93,6 +94,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
             // Send the result identifer to the main queue to update the resultLabel with the requestResult
             DispatchQueue.main.async {
                 resultLabel.text = requestResult.identifier
+                
             }
             
         })
@@ -110,10 +112,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     @IBAction func saveObjectTapped(_ sender: Any) {
         
         guard let detectedObjectName = resultLabel.text else { return }
-        
         detectedObjectController.createDetectedObject(withName: detectedObjectName)
-//        print("Save Tapped")
-//        print(detectedObjectController.detectedObjects.count)
         
         let alertController = UIAlertController(title: "Object Saved!", message: "Please select an option below to continue.", preferredStyle: .alert)
         
@@ -121,7 +120,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
             self.performSegue(withIdentifier: "ToHistoryTVC", sender: self)
         }
         
-        let dismissAction = UIAlertAction(title: "Continue", style: .default) { (dismissAction) in
+        let dismissAction = UIAlertAction(title: "Continue", style: .default) { [self] (dismissAction) in
             self.dismiss(animated: true, completion: nil)
         }
         
@@ -129,6 +128,8 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         alertController.addAction(dismissAction)
         
         self.present(alertController, animated: true, completion: nil)
+        
+        print("Tapped: ", detectedObjectController.detectedObjects.count)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

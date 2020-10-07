@@ -9,7 +9,7 @@ import Foundation
 
 class DetectedObjectController {
     
-    private(set) var detectedObjects: [DetectedObject] = []
+    var detectedObjects: [DetectedObject] = []
 //    var detectedObject: DetectedObject?
     
     
@@ -50,14 +50,13 @@ class DetectedObjectController {
     }
     
     // Save a DetectedObjects to the file
-    private func saveToPersistence() {
+    func saveToPersistence() {
         
-        guard let url = detectedObjectsURL else { return }
+        let encoder = PropertyListEncoder()
         
         do {
-            let encoder = PropertyListEncoder()
-            
             let data = try encoder.encode(detectedObjects)
+            guard let url = detectedObjectsURL else { return }
             try data.write(to: url)
         } catch {
             print("Could not save detected to persistence")
