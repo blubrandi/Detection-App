@@ -20,53 +20,61 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Czh-x5-zTJ">
-                                        <rect key="frame" x="40" y="674" width="334" height="142"/>
+                                        <rect key="frame" x="0.0" y="555" width="414" height="235.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n9Y-Iu-23H">
-                                                <rect key="frame" x="48" y="28" width="238" height="26.5"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ThR-LV-d1W">
-                                                <rect key="frame" x="241" y="70" width="25" height="48"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                                <color key="tintColor" systemColor="systemGreenColor"/>
-                                                <state key="normal" image="camera" catalog="system">
-                                                    <color key="titleColor" systemColor="systemGreenColor"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="saveObjectTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="x9q-9g-Gk4"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JWO-IX-ble">
-                                                <rect key="frame" x="88" y="72" width="21" height="48"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                                <color key="tintColor" systemColor="systemGreenColor"/>
-                                                <state key="normal" image="list.dash" catalog="system"/>
-                                                <connections>
-                                                    <segue destination="agi-xg-Prk" kind="popoverPresentation" identifier="ToHistoryTVC" popoverAnchorView="JWO-IX-ble" id="tDP-t6-5si">
-                                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                                    </segue>
-                                                </connections>
-                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="LTU-IV-UgQ">
+                                                <rect key="frame" x="48" y="48" width="318" height="105.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n9Y-Iu-23H">
+                                                        <rect key="frame" x="101" y="0.0" width="116.5" height="26.5"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="172" translatesAutoresizingMaskIntoConstraints="NO" id="9sF-LI-AqS">
+                                                        <rect key="frame" x="50.5" y="57.5" width="217.5" height="48"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JWO-IX-ble">
+                                                                <rect key="frame" x="0.0" y="0.0" width="21" height="48"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                                <color key="tintColor" systemColor="systemGreenColor"/>
+                                                                <state key="normal" image="list.dash" catalog="system"/>
+                                                                <connections>
+                                                                    <segue destination="agi-xg-Prk" kind="popoverPresentation" identifier="ToHistoryTVC" popoverAnchorView="JWO-IX-ble" id="tDP-t6-5si">
+                                                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                                                    </segue>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ThR-LV-d1W">
+                                                                <rect key="frame" x="193" y="0.0" width="24.5" height="48"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                                <color key="tintColor" systemColor="systemGreenColor"/>
+                                                                <state key="normal" image="camera" catalog="system">
+                                                                    <color key="titleColor" systemColor="systemGreenColor"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="saveObjectTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="x9q-9g-Gk4"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstItem="n9Y-Iu-23H" firstAttribute="leading" secondItem="Czh-x5-zTJ" secondAttribute="leadingMargin" constant="40" id="1TF-FY-9Wl"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="n9Y-Iu-23H" secondAttribute="trailing" constant="40" id="5fP-nJ-qqj"/>
-                                            <constraint firstItem="n9Y-Iu-23H" firstAttribute="top" secondItem="Czh-x5-zTJ" secondAttribute="topMargin" constant="20" id="uGd-Xr-rmE"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="LTU-IV-UgQ" secondAttribute="trailing" constant="40" id="7uB-ec-hgb"/>
+                                            <constraint firstItem="LTU-IV-UgQ" firstAttribute="top" secondItem="Czh-x5-zTJ" secondAttribute="topMargin" constant="40" id="IU1-ri-6Ro"/>
+                                            <constraint firstItem="LTU-IV-UgQ" firstAttribute="leading" secondItem="Czh-x5-zTJ" secondAttribute="leadingMargin" constant="40" id="Mu8-pn-ar5"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="LTU-IV-UgQ" secondAttribute="bottom" constant="74" id="ubd-lY-v42"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemRedColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="Czh-x5-zTJ" secondAttribute="bottom" constant="80" id="6w8-oq-V1q"/>
-                                    <constraint firstItem="Czh-x5-zTJ" firstAttribute="leading" secondItem="GwM-To-8Be" secondAttribute="leading" constant="40" id="Gnj-Uv-nZM"/>
-                                    <constraint firstAttribute="trailing" secondItem="Czh-x5-zTJ" secondAttribute="trailing" constant="40" id="e75-h3-Eqq"/>
-                                    <constraint firstItem="Czh-x5-zTJ" firstAttribute="top" secondItem="GwM-To-8Be" secondAttribute="top" constant="674" id="fLn-zf-MeC"/>
+                                    <constraint firstItem="Czh-x5-zTJ" firstAttribute="leading" secondItem="GwM-To-8Be" secondAttribute="leading" id="g6j-Lb-uHx"/>
+                                    <constraint firstAttribute="bottom" secondItem="Czh-x5-zTJ" secondAttribute="bottom" constant="105.5" id="mQV-Zv-DpE"/>
+                                    <constraint firstAttribute="trailing" secondItem="Czh-x5-zTJ" secondAttribute="trailing" id="mfo-bz-0Bk"/>
                                 </constraints>
                             </view>
                         </subviews>
